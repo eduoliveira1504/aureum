@@ -61,7 +61,7 @@
   .closing .deco{position:absolute;left:50%;top:50%;width:520px;height:520px;transform:translate(-50%,-50%);opacity:.07;pointer-events:none}
   .closing .mark{position:relative;display:block;margin:0 auto 28px}
   .closing .mark.spin{animation:aureum-spin .9s cubic-bezier(.4,0,.2,1)}
-  @keyframes aureum-spin{to{transform:rotate(360deg)}}
+  @keyframes aureum-spin{from{transform:perspective(600px) rotateY(0)}to{transform:perspective(600px) rotateY(360deg)}}
   @media (prefers-reduced-motion:reduce){.closing .mark.spin{animation:none}}
   .closing .name{position:relative;margin:0 0 10px;font-weight:800;font-size:clamp(44px,8vw,80px);line-height:1;letter-spacing:-.03em}
   .closing .motto{position:relative;margin:0;font-size:18px;font-style:italic;color:var(--gold)}
