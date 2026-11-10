@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aureum</title>
+<meta name="description" content="Aureum is an independent software brand. Small, honest tools and worlds, with the real status always on the label.">
+<meta property="og:title" content="Aureum">
+<meta property="og:description" content="Independent software, built with care.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0E0D0B">
+<style>
+  :root{--bg:#0E0D0B;--card:#171512;--line:#2A2620;--gold:#E8B531;--text:#F2EDE0;--muted:#A8A08C}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  a{color:var(--gold)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:12px;letter-spacing:.32em;font-weight:600;font-size:15px}
+  .lang{display:flex;gap:6px}
+  .lang button{background:none;border:1px solid var(--line);color:var(--muted);padding:4px 10px;border-radius:6px;cursor:pointer;font:inherit;font-size:13px}
+  .lang button[aria-pressed="true"]{border-color:var(--gold);color:var(--gold)}
+  .hero{padding:64px 0 40px}
+  h1{font-size:clamp(30px,6vw,48px);line-height:1.15;margin:0 0 16px;font-weight:650}
+  h1 span{color:var(--gold)}
+  .lead{color:var(--muted);max-width:60ch;font-size:18px;margin:0}
+  h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:56px 0 18px;font-weight:600}
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .card h3{margin:0 0 6px;font-size:20px}
+  .tag{display:inline-block;font-size:12px;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:1px 10px;margin-bottom:12px}
+  .card p{margin:0 0 14px;color:var(--text)}
+  .note{color:var(--muted);font-size:14px}
+  .links{display:flex;gap:16px;flex-wrap:wrap;font-size:15px}
+  .soon{border-style:dashed}
+  .soon h3{font-size:18px}
+  footer{margin-top:72px;padding:28px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+  footer p{margin:0 0 6px}
+  .motto{font-style:italic;color:var(--gold)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
+      <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="none" stroke="#E8B531" stroke-width="2"/>
+      <path d="M10.5 22 16 10l5.5 12M12.4 18.2h7.2" fill="none" stroke="#E8B531" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    AUREUM
+  </div>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="pt" aria-pressed="false">PT</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <h1 data-i18n="h1">Independent software, <span>built with care.</span></h1>
+  <p class="lead" data-i18n="lead">Aureum is an independent software brand. Small, honest tools and worlds, with the real status always on the label.</p>
+</section>
+
+<section>
+  <h2 data-i18n="h_products">Products</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Aureum Voice</h3>
+      <span class="tag" data-i18n="voice_tag">Closed beta · v0.2.0-beta.10</span>
+      <p data-i18n="voice_desc">Chat and voice for Windows. No ads, no AI in the app. The download is public; accounts are invite-only, and I choose who gets in. The Mac build is experimental (no overlay, push-to-talk or auto-update).</p>
+      <div class="links">
+        <a href="https://eduoliveira1504.github.io/aureum-voice" rel="noopener" data-i18n="voice_l1">Landing page</a>
+        <a href="https://github.com/eduoliveira1504/aureum-voice" rel="noopener">GitHub</a>
+      </div>
+    </article>
+    <article class="card">
+      <h3>Aureum Island</h3>
+      <span class="tag" data-i18n="island_tag">v0.2.0 · Free</span>
+      <p data-i18n="island_desc">A notch for the top of your Windows 10/11 screen. Free, no account, no telemetry.</p>
+      <p class="note" data-i18n="island_note">Working name; it may change.</p>
+      <div class="links">
+        <a href="https://github.com/eduoliveira1504/aureum-island" rel="noopener">GitHub</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="h_dev">In development</h2>
+  <div class="grid">
+    <article class="card soon">
+      <h3>A Ordem da Lanterna <span class="note">· powered by Aureum</span></h3>
+      <span class="tag" data-i18n="dev_tag">In development</span>
+      <p data-i18n="game_desc">A dark medieval co-op extraction game, 2D isometric pixel art. Nothing public yet.</p>
+    </article>
+    <article class="card soon">
+      <h3 data-i18n="mod_title">Minecraft RPG modpack</h3>
+      <span class="tag" data-i18n="dev_tag2">In development</span>
+      <p data-i18n="mod_desc">A Forge 1.20.1 modpack with classes, races and a skill tree. Nothing public yet.</p>
+    </article>
+  </div>
+</section>
+
+<section>
+  <h2 data-i18n="h_about">About</h2>
+  <p data-i18n="about">I'm Eduardo, in Curitiba, Brazil. I build Aureum in my free time, on no budget, and everything here is made by me. I only say what exists today.</p>
+</section>
+
+<section>
+  <h2 data-i18n="h_contact">Contact</h2>
+  <p>
+    <a href="mailto:aureum.app@gmail.com">aureum.app@gmail.com</a> ·
+    <a href="https://instagram.com/aureumapp" rel="noopener">@aureumapp</a>
+  </p>
+  <p class="note" data-i18n="contact_note">Beta invites aren't open for requests right now.</p>
+</section>
+</main>
+
+<footer>
+  <p class="motto">Aetas aurea</p>
+  <p data-i18n="legal1">© 2026 Eduardo Pereira (Aureum). All rights reserved.</p>
+  <p data-i18n="legal2">Public repositories are visible for reference only. Third-party components keep their own licenses. Aureum names and logo are not licensed.</p>
+</footer>
+</div>
+
+<script>
+(function () {
+  var T = {
+    en: {
+      h1: 'Independent software, <span>built with care.</span>',
+      lead: 'Aureum is an independent software brand. Small, honest tools and worlds, with the real status always on the label.',
+      h_products: 'Products',
+      voice_tag: 'Closed beta · v0.2.0-beta.10',
+      voice_desc: 'Chat and voice for Windows. No ads, no AI in the app. The download is public; accounts are invite-only, and I choose who gets in. The Mac build is experimental (no overlay, push-to-talk or auto-update).',
+      voice_l1: 'Landing page',
+      island_tag: 'v0.2.0 · Free',
+      island_desc: 'A notch for the top of your Windows 10/11 screen. Free, no account, no telemetry.',
+      island_note: 'Working name; it may change.',
+      h_dev: 'In development',
+      dev_tag: 'In development', dev_tag2: 'In development',
+      game_desc: 'A dark medieval co-op extraction game, 2D isometric pixel art. Nothing public yet.',
+      mod_title: 'Minecraft RPG modpack',
+      mod_desc: 'A Forge 1.20.1 modpack with classes, races and a skill tree. Nothing public yet.',
+      h_about: 'About',
+      about: "I'm Eduardo, in Curitiba, Brazil. I build Aureum in my free time, on no budget, and everything here is made by me. I only say what exists today.",
+      h_contact: 'Contact',
+      contact_note: "Beta invites aren't open for requests right now.",
+      legal1: '© 2026 Eduardo Pereira (Aureum). All rights reserved.',
+      legal2: 'Public repositories are visible for reference only. Third-party components keep their own licenses. Aureum names and logo are not licensed.'
+    },
+    pt: {
+      h1: 'Software independente, <span>feito com cuidado.</span>',
+      lead: 'Aureum é uma marca independente de software. Ferramentas e mundos pequenos e honestos, com o status real sempre à vista.',
+      h_products: 'Produtos',
+      voice_tag: 'Beta fechado · v0.2.0-beta.10',
+      voice_desc: 'Chat e voz para Windows. Sem anúncios, sem IA no app. O download é público; a conta só entra com convite, e eu escolho quem entra. A versão para Mac é experimental (sem overlay, push-to-talk ou atualização automática).',
+      voice_l1: 'Página do produto',
+      island_tag: 'v0.2.0 · Grátis',
+      island_desc: 'Um notch para o topo da tela do Windows 10/11. Grátis, sem conta, sem telemetria.',
+      island_note: 'Nome provisório; pode mudar.',
+      h_dev: 'Em desenvolvimento',
+      dev_tag: 'Em desenvolvimento', dev_tag2: 'Em desenvolvimento',
+      game_desc: 'Um jogo co-op de extração, medieval sombrio, 2D isométrico em pixel-art. Ainda nada público.',
+      mod_title: 'Modpack de Minecraft (RPG)',
+      mod_desc: 'Um modpack para Forge 1.20.1 com classes, raças e árvore de habilidades. Ainda nada público.',
+      h_about: 'Sobre',
+      about: 'Sou o Eduardo, de Curitiba. Faço a marca Aureum no meu tempo livre, sem orçamento, e tudo aqui é feito por mim. Só digo o que existe hoje.',
+      h_contact: 'Contato',
+      contact_note: 'Os convites do beta não estão abertos a pedidos no momento.',
+      legal1: '© 2026 Eduardo Pereira (Aureum). Todos os direitos reservados.',
+      legal2: 'Os repositórios públicos são visíveis apenas para consulta. Componentes de terceiros mantêm suas próprias licenças. Nomes e logo da Aureum não são licenciados.'
+    }
+  };
+  var btns = document.querySelectorAll('.lang button');
+  function setLang(l) {
+    if (!T[l]) l = 'en';
+    document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n');
+      if (k === 'h1') el.innerHTML = T[l][k]; else el.textContent = T[l][k];
+    });
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.lang === l ? 'true' : 'false'); });
+    try { localStorage.setItem('aureum-lang', l); } catch (e) {}
+  }
+  btns.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.lang); }); });
+  var saved = 'en';
+  try { saved = localStorage.getItem('aureum-lang') || 'en'; } catch (e) {}
+  if (saved !== 'en') setLang(saved);
+})();
+</script>
+</body>
+</html>
