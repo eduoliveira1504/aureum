@@ -9,6 +9,7 @@
 <meta property="og:description" content="Independent software, built with care.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0E0D0B">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'%3E%3Cpolygon points='48,8 82.6,28 82.6,68 48,88 13.4,68 13.4,28' fill='%230E0D0B' stroke='%23E8B531' stroke-width='8' stroke-linejoin='round'/%3E%3Cpath d='M48 26 L66 70 H56 L48 50 L40 70 H30 Z' fill='%23E8B531'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
 <style>
   :root{--bg:#0E0D0B;--card:#171512;--line:#2A2620;--gold:#E8B531;--text:#F2EDE0;--muted:#A8A08C;--dash:#4A4337}
@@ -56,9 +57,16 @@
   .contact h2{color:var(--muted)}
   .contact p{margin:0 0 4px;font-weight:600}
   .contact .n{margin:12px 0 0;font-size:14px;font-weight:400;color:var(--muted)}
+  .closing{position:relative;overflow:hidden;text-align:center;padding:104px 0 96px;border-top:1px solid var(--line)}
+  .closing .deco{position:absolute;left:50%;top:50%;width:520px;height:520px;transform:translate(-50%,-50%);opacity:.07;pointer-events:none}
+  .closing .mark{position:relative;display:block;margin:0 auto 28px}
+  .closing .mark.spin{animation:aureum-spin .9s cubic-bezier(.4,0,.2,1)}
+  @keyframes aureum-spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.closing .mark.spin{animation:none}}
+  .closing .name{position:relative;margin:0 0 10px;font-weight:800;font-size:clamp(44px,8vw,80px);line-height:1;letter-spacing:-.03em}
+  .closing .motto{position:relative;margin:0;font-size:18px;font-style:italic;color:var(--gold)}
   footer{border-top:1px solid var(--line);padding:28px 0 56px;font-size:13px;color:var(--muted)}
   footer p{margin:0 0 6px}
-  .motto{font-style:italic;color:var(--gold)}
 </style>
 </head>
 <body>
@@ -66,10 +74,9 @@
 
 <header>
   <div class="brand">
-    <!-- LOGO: replace this SVG with the official Aureum logo -->
-    <svg width="30" height="30" viewBox="0 0 32 32" aria-hidden="true">
-      <polygon points="16,2 28,9 28,23 16,30 4,23 4,9" fill="none" stroke="#E8B531" stroke-width="2"/>
-      <path d="M10.5 22 16 10l5.5 12M12.4 18.2h7.2" fill="none" stroke="#E8B531" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg width="34" height="34" viewBox="0 0 96 96" aria-hidden="true">
+      <polygon points="48,8 82.6,28 82.6,68 48,88 13.4,68 13.4,28" fill="none" stroke="#E8B531" stroke-width="8" stroke-linejoin="round"/>
+      <path d="M48 26 L66 70 H56 L48 50 L40 70 H30 Z" fill="#E8B531"/>
     </svg>
     AUREUM
   </div>
@@ -143,10 +150,22 @@
   </div>
 </main>
 
-<footer>
+<section class="closing">
+  <svg class="deco" viewBox="0 0 96 96" aria-hidden="true">
+    <polygon points="48,8 82.6,28 82.6,68 48,88 13.4,68 13.4,28" fill="none" stroke="#E8B531" stroke-width="1"/>
+    <polygon points="48,18 74,33 74,63 48,78 22,63 22,33" fill="none" stroke="#E8B531" stroke-width="1"/>
+  </svg>
+  <svg class="mark" id="spin-mark" width="64" height="64" viewBox="0 0 96 96" aria-hidden="true">
+    <polygon points="48,8 82.6,28 82.6,68 48,88 13.4,68 13.4,28" fill="none" stroke="#E8B531" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M48 26 L66 70 H56 L48 50 L40 70 H30 Z" fill="#E8B531"/>
+  </svg>
+  <p class="name">Aureum</p>
   <p class="motto">Aetas aurea</p>
+</section>
+
+<footer>
   <p data-i18n="legal1">© 2026 Eduardo Pereira (Aureum). All rights reserved.</p>
-  <p data-i18n="legal2">Public repositories are visible for reference only. Third-party components keep their own licenses. Aureum names and logo are not licensed.</p>
+  <p data-i18n="legal2">Public repositories are visible for reference only. Third-party components keep their own licenses.</p>
 </footer>
 </div>
 
@@ -172,7 +191,7 @@
       h_contact: 'Contact',
       contact_note: "Beta invites aren't open for requests right now.",
       legal1: '© 2026 Eduardo Pereira (Aureum). All rights reserved.',
-      legal2: 'Public repositories are visible for reference only. Third-party components keep their own licenses. Aureum names and logo are not licensed.'
+      legal2: 'Public repositories are visible for reference only. Third-party components keep their own licenses.'
     },
     pt: {
       h1: 'Software independente, <span>feito com cuidado.</span>',
@@ -193,7 +212,7 @@
       h_contact: 'Contato',
       contact_note: 'Os convites do beta não estão abertos a pedidos no momento.',
       legal1: '© 2026 Eduardo Pereira (Aureum). Todos os direitos reservados.',
-      legal2: 'Os repositórios públicos são visíveis apenas para consulta. Componentes de terceiros mantêm suas próprias licenças. Nomes e logo da Aureum não são licenciados.'
+      legal2: 'Os repositórios públicos são visíveis apenas para consulta. Componentes de terceiros mantêm suas próprias licenças.'
     }
   };
   var btns = document.querySelectorAll('.lang button');
@@ -211,6 +230,12 @@
   var saved = 'en';
   try { saved = localStorage.getItem('aureum-lang') || 'en'; } catch (e) {}
   if (saved !== 'en') setLang(saved);
+
+  var m = document.getElementById('spin-mark');
+  if (m) {
+    m.addEventListener('mouseenter', function () { m.classList.add('spin'); });
+    m.addEventListener('animationend', function () { m.classList.remove('spin'); });
+  }
 })();
 </script>
 </body>
